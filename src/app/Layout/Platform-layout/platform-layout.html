@@ -1,0 +1,21 @@
+<div class="flex h-screen">
+  <aside class="w-64 bg-slate-900 text-white">
+    <div class="text-xl font-bold p-6 border-b border-slate-700">Telehealth</div>
+
+    <nav class="p-4">
+      <a routerLink="/platform/dashboard" class="block py-3 px-4 rounded hover:bg-slate-700">
+        Dashboard
+      </a>
+
+      <a routerLink="/platform/plans" class="block py-3 px-4 rounded hover:bg-slate-700"> Plans </a>
+
+      <a routerLink="/platform/tenants" class="block py-3 px-4 rounded hover:bg-slate-700">
+        Tenants
+      </a>
+    </nav>
+  </aside>
+
+  <main class="flex-1 bg-slate-100 p-6">
+    <router-outlet />
+  </main>
+</div>

@@ -1,0 +1,30 @@
+import {
+  CanActivateFn,
+  Router
+} from '@angular/router';
+
+import {
+  inject
+} from '@angular/core';
+import { TokenService } from '../Services/token.service';
+
+
+export const authGuard:
+CanActivateFn = () => {
+
+  const tokenService =
+    inject(TokenService);
+
+  const router =
+    inject(Router);
+
+  if (
+    tokenService.isLoggedIn()
+  ) {
+    return true;
+  }
+
+  return router.createUrlTree(
+    ['/login']
+  );
+};
